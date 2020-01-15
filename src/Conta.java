@@ -1,20 +1,20 @@
 
-public class Conta {
-	private int conta;
+public abstract class Conta implements Tributavel{
+	private int agencia;
 	private int numero;
-	private double saldo;
+	protected double saldo;
 	
 	public Conta(int conta, int numero, double saldo) {
-		this.conta = conta;
+		this.agencia = conta;
 		this.numero = numero;
 		this.saldo = saldo;
 	}
 	
 	public int getConta() {
-		return conta;
+		return agencia;
 	}
 	public void setConta(int conta) {
-		this.conta = conta;
+		this.agencia = conta;
 	}
 	public int getNumero() {
 		return numero;
@@ -45,7 +45,7 @@ public class Conta {
 
 	@Override
 	public String toString() {
-		return "Conta: " + conta + "|" + numero + "\nSaldo= R$" + saldo;
+		return "Conta: " + agencia + "|" + numero + "\nSaldo= R$" + saldo;
 	}
 	
 	
