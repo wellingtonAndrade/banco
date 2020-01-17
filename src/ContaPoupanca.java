@@ -8,15 +8,12 @@ public class ContaPoupanca extends Conta implements Tributavel{
 	}
 
 	@Override
-	public boolean sacar(double valor) {
+	public void sacar(double valor) {
 		System.out.println("saque poupança");
 		double valorTotal = valor + tarifaSaque;
-		if((super.saldo - valorTotal) >= 0) {
-			super.saldo -= valorTotal;
-			return true;
-		}else {
-			return false;
-		}		
+		if((super.saldo - valorTotal) <= 0) {
+			throw new SaldoInsuficienteException("Saldo Insuficiente para o saque");
+		}	
 	}
 	
 	@Override

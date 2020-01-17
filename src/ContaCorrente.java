@@ -6,13 +6,11 @@ public class ContaCorrente extends Conta implements Tributavel{
 	}
 	
 	@Override
-	public boolean sacar(double valor) {
-		if((super.saldo - valor) >= 0) {
-			super.saldo -= valor;
-			return true;
-		}else {
-			return false;
-		}		
+	public void sacar(double valor) {
+		if((super.saldo - valor) < 0) {
+			throw new SaldoInsuficienteException("Saldo Insuficiente para o saque");
+		}	
+		this.saldo -= valor;
 	}
 
 	@Override

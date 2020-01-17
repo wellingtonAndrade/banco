@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-		Conta conta1 = new ContaCorrente(3065, 9823705, 0);
+		Conta conta1 = new ContaCorrente(3065, 9823705, 50);
 		Conta conta2 = new ContaPoupanca(1545, 222222, 200.00);
 		Conta conta3 = new ContaCorrente(3456, 333333, 3000.00);
 		List<Cliente> cliente = new ArrayList<Cliente>();
@@ -25,12 +25,8 @@ public class Main {
 		
 		for(int i=0; i < cliente.size();i++) {
 			if(cliente.get(i).getConta().getConta() == 3065 && cliente.get(i).getConta().getNumero() == 9823705) {
-				boolean retornosaque = cliente.get(i).getConta().sacar(100);
-				if(retornosaque) {
-					System.out.println("Saque realizado com SUCESSO!");
-				}else {
-					System.out.println("Sem Saldo para o saque!");
-				}
+					cliente.get(i).getConta().sacar(50);
+				
 			}
 			System.out.println(cliente.get(i));
 		}

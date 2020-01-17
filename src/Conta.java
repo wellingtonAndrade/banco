@@ -34,13 +34,8 @@ public abstract class Conta implements Tributavel{
 		return true;
 	}
 	
-	public boolean sacar(double valor) {
-		if((this.saldo - valor) >= 0) {
-			this.saldo -= valor;
-			return true;
-		}else {
-			return false;
-		}		
+	public void sacar(double valor) {
+		
 	}
 
 	@Override
