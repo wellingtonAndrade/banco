@@ -6,7 +6,7 @@ public class ContaCorrente extends Conta implements Tributavel{
 	}
 	
 	@Override
-	public void sacar(double valor) {
+	public void sacar(double valor) throws SaldoInsuficienteException{
 		if((super.saldo - valor) < 0) {
 			throw new SaldoInsuficienteException("Saldo Insuficiente para o saque");
 		}	

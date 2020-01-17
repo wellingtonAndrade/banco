@@ -34,7 +34,7 @@ public abstract class Conta implements Tributavel{
 		return true;
 	}
 	
-	public void sacar(double valor) {
+	public void sacar(double valor) throws SaldoInsuficienteException{
 		
 	}
 

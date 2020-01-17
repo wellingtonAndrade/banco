@@ -8,7 +8,7 @@ public class ContaPoupanca extends Conta implements Tributavel{
 	}
 
 	@Override
-	public void sacar(double valor) {
+	public void sacar(double valor) throws SaldoInsuficienteException{
 		System.out.println("saque poupança");
 		double valorTotal = valor + tarifaSaque;
 		if((super.saldo - valorTotal) <= 0) {

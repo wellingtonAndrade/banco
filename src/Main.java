@@ -24,9 +24,13 @@ public class Main {
 //		}
 		
 		for(int i=0; i < cliente.size();i++) {
-			if(cliente.get(i).getConta().getConta() == 3065 && cliente.get(i).getConta().getNumero() == 9823705) {
-					cliente.get(i).getConta().sacar(50);
-				
+			try {
+				if(cliente.get(i).getConta().getConta() == 3065 && cliente.get(i).getConta().getNumero() == 9823705) {
+					cliente.get(i).getConta().sacar(100);
+					
+				}				
+			}catch(SaldoInsuficienteException ex) {
+				ex.printStackTrace();
 			}
 			System.out.println(cliente.get(i));
 		}
